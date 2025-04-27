@@ -1,4 +1,4 @@
-name: "Auto-Assign Reviewers and Author"
+name: "Auto-Assign"
 
 on:
   pull_request:
@@ -8,9 +8,11 @@ jobs:
   assign:
     runs-on: ubuntu-latest
     steps:
-      - uses: peter-evans/assign-reviewers@v2.2.0
+      - uses: peter-evans/review-assigner@v2
         with:
-          reviewers: |
-            stackednerds
-          number-of-reviewers: 1
-          assignees: author
+          configuration: |
+            addAssignees: author
+            reviewers:
+              users:
+                - stackednerds
+              count: 2
