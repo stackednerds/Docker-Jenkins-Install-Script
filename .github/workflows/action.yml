@@ -1,4 +1,5 @@
 name: 'Auto Assign'
+
 on:
   pull_request:
     types: [opened, ready_for_review]
@@ -9,5 +10,6 @@ jobs:
     steps:
       - uses: kentaro-m/auto-assign-action@v2.0.0
         with:
-          repo-token: ${{ secrets.ASSIGN_REVIEWERS }}
-          configuration-path: .github/auto_assign.yml
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          reviewers: "stackednerds"
+          assignees: "author"
