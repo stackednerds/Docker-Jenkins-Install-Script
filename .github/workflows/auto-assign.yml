@@ -1,0 +1,16 @@
+name: "Auto-Assign Reviewers and Author"
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/assign-reviewers@v2
+        with:
+          reviewers: |
+            stackednerds
+          number-of-reviewers: 1
+          assignees: author
