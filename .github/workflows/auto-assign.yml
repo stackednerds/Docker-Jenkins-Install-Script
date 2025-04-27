@@ -8,7 +8,7 @@ jobs:
   assign:
     runs-on: ubuntu-latest
     steps:
-      - uses: peter-evans/assign-reviewers@v2
+      - uses: peter-evans/assign-reviewers@v2.2.0
         with:
           reviewers: |
             stackednerds
